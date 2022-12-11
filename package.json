@@ -1,0 +1,28 @@
+{
+  "name": "audio-testing",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "16.x.x"
+  },
+  "main": "js/index.js",
+  "scripts": {
+    "start": "concurrently \"npm:server\" \"npm:client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./js/server.js",
+    "client": "serve -l 3000",
+    "deploy": "gcloud app deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/debug-agent": "^7.2.0",
+    "@google-cloud/functions-framework": "^3.1.2",
+    "axios": "^0.21.1",
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "serve": "^14.1.2"
+  }
+}
