@@ -1,13 +1,96 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const data = [
+      {
+        id: 1,
+          title: "Lorem ipsum dolor sit amet,",
+          status: "resolved",
+          priority: "low",
+          content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
+            ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
+            In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
+            Fusce sed commodo purus, at tempus turpis.`,
+      },
+      {
+        id: 2,
+          title: "Nunc maximus, magna at ultricies elementum",
+          status: "resolved",
+          priority: "low",
+          content:"Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+      },
+      {
+        id: 3,
+          title: "Curabitur laoreet, mauris vel blandit fringilla",
+          status: "resolved",
+          priority: "low",
+          content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+          Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+          Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
+          Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+      },
+      {
+        id: 4,
+          title: "What is the package version",
+          status: "resolved",
+          priority: "low",
+          content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+          Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+          Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
+          Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+      }
+    ];
+
+
 const TickesItems = () => {
+
+  const [tickets, setTickets] = React.useState(data);
+
+  const fetchTickets = async () => {
+    const res = await fetch("http://localhost:5000/tickets");
+    const data = await res.json();
+    setTickets(data);
+  };
+
+  // fetch data from the server
+  React.useEffect(() => {
+    fetchTickets();
+  }, []);
+
+
+
   return (
     <div id="content" className="bg-white/10 col-span-9 rounded-lg p-6">
-      
+      <div>
+      {/* create a table to show tickets and buttons to edit them */}
+      <table className="table-auto w-full">
+        <thead>
+          <tr>
+            <th className="px-4 py-2">Title</th>
+            <th className="px-4 py-2">Status</th>
+            <th className="px-4 py-2">Priority</th>
+            <th className="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tickets.map((ticket) => (
+            <tr key={ticket.id}>
+              <td className="border px-4 py-2">{ticket.title}</td>
+              <td className="border px-4 py-2">{ticket.status}</td>
+              <td className="border px-4 py-2">{ticket.priority}</td>
+              <td className="border px-4 py-2">
+                <Link to={`/dashboard/tickets/${ticket.id}`}>
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    View
+                  </button>
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-
-
+      </div>
       <div>
         <h1 className="text-3xl font-bold text-white">Add a new ticket</h1>
       </div>
