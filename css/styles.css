@@ -1,12 +1,6 @@
-header {
-  background: #09032f;
+.header {
   color: white;
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 2.5%;
-  box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);
+  height: 50px;
 }
 
 .header__title {
@@ -41,6 +35,16 @@ header {
   font-weight: 525;
 }
 
+#button{
+  display: flex;
+  padding: .5em;
+  border-radius: .5rem;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  width: 5%;
+  font-size: 18px;
+}
 .real-time-interface__message {
   text-align: left;
   width: 95%;
