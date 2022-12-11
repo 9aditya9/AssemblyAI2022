@@ -6,6 +6,7 @@ import Login from './screens/Login';
 import Navbar from './screens/Navbar';
 import Dashboard from './screens/Dashboard/Dashboard';
 import Tickets from './screens/Dashboard/Tickets';
+import Meet from './screens/Calendar/Meet';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path='/demo/dashboard' element={<Dashboard/>} />
         <Route path='/demo/tickets' element={<Tickets/>} />
-        <Route path='/demo/calendar' element={<Dashboard/>} />
+        <Route path='/demo/calendar' element={<Meet/>} />
         <Route path='/demo/aibot' element={<Dashboard/>} />
         <Route path='/demo/settings' element={<Dashboard/>} />
         <Route path='/demo/subscriptions' element={<Dashboard/>} />
