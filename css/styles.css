@@ -10,9 +10,8 @@ header {
 }
 
 .header__title {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 400;
-  margin-bottom: .20em;
 }
 
 .header__sub-title {
@@ -24,7 +23,7 @@ header {
   padding: 1.25% 0 0 2.5%;
 }
 
-.real-time-interface__button {
+/* .real-time-interface__button {
   display: flex;
   padding: .5em;
   border-radius: .5rem;
@@ -34,7 +33,7 @@ header {
   color: white;
   width: 5%;
   font-size: 18px;
-}
+} */
 
 .real-time-interface__title {
   margin-bottom: .5em;
