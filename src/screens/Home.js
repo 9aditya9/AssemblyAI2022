@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 const Home = () => {
   return (
     <div>
+      <Navbar />
       <div className="font-sans bg-white flex flex-col min-h-screen w-full">
         <div>
           <div className="bg-gray-200 md:overflow-hidden">

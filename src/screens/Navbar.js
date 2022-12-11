@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-      <div className="font-sans w-full sticky top-0 z-50">
+    <div className="font-sans w-full sticky top-0 z-50">
       <div className="bg-white px-4 py-2">
         <div className="w-full md:max-w-6xl md:mx-auto md:flex md:items-center md:justify-between">
           <div>
@@ -11,7 +11,7 @@ const Navbar = () => {
               to="/"
               className="inline-block py-2 text-gray-800 text-2xl font-bold"
             >
-              Customer Success
+              CustomerAI
             </Link>
           </div>
 
@@ -53,10 +53,10 @@ const Navbar = () => {
               Login
             </Link>
             <Link
-              to="#"
+              to="/demo/dashboard"
               className="inline-block py-2 px-4 text-gray-700 rounded-lg bg-sky-200 hover:bg-gray-300"
             >
-                Book Demo
+              Book Demo
             </Link>
           </div>
         </div>

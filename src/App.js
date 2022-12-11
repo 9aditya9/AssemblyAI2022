@@ -4,14 +4,21 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './screens/Home';
 import Login from './screens/Login';
 import Navbar from './screens/Navbar';
+import Dashboard from './screens/Dashboard/Dashboard';
+import Tickets from './screens/Dashboard/Tickets';
 
 function App() {
   return (
     <div className="App">
-        <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />
+        <Route path='/demo/dashboard' element={<Dashboard/>} />
+        <Route path='/demo/tickets' element={<Tickets/>} />
+        <Route path='/demo/calendar' element={<Dashboard/>} />
+        <Route path='/demo/aibot' element={<Dashboard/>} />
+        <Route path='/demo/settings' element={<Dashboard/>} />
+        <Route path='/demo/subscriptions' element={<Dashboard/>} />
       </Routes>
       
     </div>
